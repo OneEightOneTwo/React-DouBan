@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  font-size: 12px;
+  margin-right: 3px;
+  vertical-align: middle;
+}
+
+input,
+button,
+textarea,
+select,
+optgroup,
+option {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+}
+
+fieldset {
+  border: 1px solid #ddd;
+  padding: 0 10px;
+  margin-bottom: 15px;
+}
+
+fieldset legend {
+  color: #666;
+  padding: 0 5px;
+}
+
+html body,
+html td,
+html th,
+html .pl,
+html input {
+  font-size: 13px;
+}
+
+#db_nav_movie {
+  width: 100%;
+  /* height: 56px; */
+}
+
+.container {
+  width: 1040px;
+  margin: 0 auto;
+}
+
+.nav {
+  width: 1040px;
+  overflow: hidden;
+  zoom: 1;
+  margin-bottom: 40px;
+  position: relative;
+  background-color: #f0f3f5;
+}
+
+#db_nav_movie .nav-wrap {
+  border-color: #e3ebec;
+}
+
+.nav .nav-wrap {
+  border-bottom: 1px solid #e5ebe4;
+}
+
+.nav .nav_primary {
+  width: 1040px;
+  margin: 0 auto;
+  overflow: visible !important;
+  position: relative;
+  padding: 10px 0 5px;
+  zoom: 1;
+}
+
+#db_nav_movie .nav_logo {
+  background: url(../../../assets/lg_movie_a12_2.png) no-repeat 0 12px;
+}
+
+.nav .nav_logo {
+  float: left;
+  height: 56px;
+  width: 145px;
+  margin: 0 13px 0 0;
+}
+
+.nav .nav_logo a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  line-height: 100em;
+}
+
+/* 搜索框 */
+.nav_search {
+  margin-left: 145px;
+  overflow: visible !important;
+  position: relative;
+  zoom: 1;
+  padding: 10px 0 15px 0;
+}
+
+.nav_search fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  position: static;
+}
+
+.nav_search legend {
+  display: none;
+}
+
+.nav_search .inp {
+  background-image: url(../../../assets/nav_mv_bg.png);
+}
+
+.nav_search .inp {
+  float: left;
+  width: 470px;
+  height: 34px;
+  text-align: center;
+  /* margin-top: 10px; */
+  margin-right: -3px;
+  cursor: text;
+}
+
+.nav_search .inp input {
+  background: #fff;
+  width: 96%;
+  margin: 0;
+  text-align: left;
+  height: 30px;
+  padding-left: 10px;
+  height: 28px\9;
+  line-height: 28px\9;
+  outline: none;
+}
+
+.nav_search input {
+  -webkit-appearance: none;
+  border: none;
+  background: transparent;
+}
+
+.nav_search .inp_btn {
+  position: relative;
+  left: -1px;
+  width: 37px;
+  height: 34px;
+  zoom: 1;
+  overflow: hidden;
+}
+
+.nav_search .inp_btn input {
+  background: url(../../../assets/nav_mv_bg.png) no-repeat 0 -40px;
+}
+
+.nav_search .inp_btn input {
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+  padding: 35px 0 0 0;
+  overflow: hidden;
+  color: transparent;
+  cursor: pointer;
+  /* margin-top: 10px; */
+}
+
+/* 小导航 */
+.nav_secondary {
+  width: 1040px;
+  margin: 0 auto;
+  padding-bottom: 0;
+  overflow: hidden;
+  zoom: 1;
+}
+
+.nav_secondary .nav_items {
+  float: none;
+  zoom: 1;
+  font-size: 14px;
+}
+
+.nav_secondary ul {
+  margin: 9px 0;
+}
+
+.nav_secondary li {
+  display: inline;
+  margin-right: 25px;
+}
+
+#db_nav_movie a:link,
+#db_nav_movie a:visited {
+  color: #27a;
+  text-decoration: none;
+}
+
+#db_nav_movie a.movieannual2018 {
+  position: absolute;
+  width: 186px;
+  height: 96px;
+  top: 10px;
+  left: 50%;
+  margin-left: 200px;
+  background: url(../../../assets/annual_2018.png) center/contain no-repeat;
+}
