@@ -9,15 +9,9 @@ class Header extends Component {
       <div id={styles.header}>
         <div className={styles.container}>
           <ul className={styles.left}>
-            <Link to="/">
-              <a href="">豆瓣</a>
-            </Link>
-            <Link to="/read">
-              <a href="">读书</a>
-            </Link>
-            <Link to="/movie">
-              <a href="">电影</a>
-            </Link>
+            <Link to="/">豆瓣</Link>
+            <Link to="/read">读书</Link>
+            <Link to="/movie">电影</Link>
             <a href="">音乐</a>
             <a href="">同城</a>
             <a href="">小组</a>
