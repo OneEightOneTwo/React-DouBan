@@ -1,6 +1,8 @@
 /* 首页（豆瓣页） */
 /* 头部导航栏 */
+
 *{margin: 0;padding: 0;text-decoration: none}
+
 #header{
     background-color: black;
     height: 28px;
@@ -9,6 +11,7 @@
 #header .left{
     height: 28px;
     float:left;
+    margin: 0;
 }
 #header .left a{
     display: inline-block;
