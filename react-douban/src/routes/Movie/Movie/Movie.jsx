@@ -1,26 +1,54 @@
 import React, { Component } from "react";
 import { connect } from "dva";
+// 引用axios
+import axios from "axios";
 
 import Header from "../../../components/Header/Header";
-
+// 引用mock
+import "../../../mock/mock";
 import styles from "./Movie.css";
 
 class Movie extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      arr: []
+      id: "",
+      rating: "",
+      genres: "",
+      title: "",
+      casts: "",
+      collect_count: "",
+      original_title: "",
+      subtype: "",
+      directors: "",
+      year: "",
+      images: "",
+      alt: ""
     };
   }
 
-  componentWillMount() {
-    this.props.dispatch({
-      type: "theaters/edit",
-      payload: {
-        //可以不填
-        // 参数名：参数值
-      }
-    });
+  // 组件挂载后再调用一次
+  componentDidMount() {
+    axios
+      .get("/data")
+      .then(function(res) {
+        const result = res.data.theaters[0].subjects;
+        console.log(result);
+        // const hot = result.map(item => {
+        //   return {
+        //     alt: item.alt,
+        //     casts: item.casts,
+        //     collect_count: item.collect_count,
+        //     directors: item.directors,
+        //     img: item.images.small,
+        //     title: item.title
+        //   };
+        // });
+        // console.log(hot);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
   }
 
   render() {
@@ -132,7 +160,10 @@ class Movie extends Component {
                         <ul>
                           <li className={styles.poster}>
                             <a href=" ">
-                              <img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2552058346.webp" />
+                              <img
+                                src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2552058346.webp"
+                                alt=""
+                              />
                             </a>
                           </li>
                           <li className={styles.titles}>
@@ -159,7 +190,7 @@ class Movie extends Component {
                         <ul>
                           <li className={styles.poster}>
                             <a href=" ">
-                              <img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2553734348.webp" />
+                              <img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2554905337.webp" />
                             </a>
                           </li>
                           <li className={styles.titles}>
@@ -271,7 +302,7 @@ class Movie extends Component {
                 {/*  douban ad begin */}
                 <div className={styles.movie_home_left_bottom}>
                   <img
-                    src="https://img3.doubanio.com/view/dale-online/dale_ad/public/5ba7f93a26ac651.jpg"
+                    src="https://img3.doubanio.com/view/dale-online/dale_ad/public/5bbcfd8ded9c330.jpg"
                     border="0"
                     width="675"
                     height="112"
@@ -292,12 +323,6 @@ class Movie extends Component {
                     styles.slide_mode
                   }
                 >
-                  <div
-                    className={styles.detail_pop}
-                    style={{ display: "none", top: 725, left: 366.667 }}
-                  >
-                    1
-                  </div>
                   <div className={styles.fliter_wp}>
                     <h2>
                       <div data-type="movie" className={styles.activate}>
@@ -308,6 +333,7 @@ class Movie extends Component {
                           action="get"
                           className={styles.gaia_frm}
                           autoComplete="off"
+                          style={{ transform: " translate(109px,-26px)" }}
                         >
                           <input type="hidden" name="type" value="movie" />
                           <div className={styles.tag}>
@@ -370,6 +396,22 @@ class Movie extends Component {
                           <input type="hidden" name="page_start" value="0" />
                         </form>
                       </div>
+                      <div
+                        className={styles.filter_placeholder}
+                        style={{ height: 0 }}
+                      />
+
+                      <a
+                        href=""
+                        className={styles.more_link}
+                        style={{
+                          fontSize: 13,
+                          display: "block",
+                          transform: " translate(640px,-57px)"
+                        }}
+                      >
+                        更多»
+                      </a>
                     </h2>
                   </div>
                 </div>

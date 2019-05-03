@@ -250,6 +250,13 @@ form {
   min-height: 420px;
 }
 
+.contents h2 {
+  color: #111;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eaeaea;
+  margin-bottom: 18px;
+}
+
 .grid_16_8 .article {
   width: 675px;
 }
@@ -287,13 +294,6 @@ form {
   float: right;
   line-height: 30px;
   color: #666;
-}
-
-.contents h2 {
-  color: #111;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eaeaea;
-  margin-bottom: 18px;
 }
 
 #screening h2 span {
@@ -485,6 +485,10 @@ form {
   zoom: 1;
 }
 
+.gaia h2 {
+  font-size: 17px;
+}
+
 .gaia h2 .activate {
   color: #111;
   cursor: default;
@@ -505,7 +509,7 @@ form {
 .gaia .tag .sub_tag_list,
 .gaia .sub_tags .tag_list,
 .gaia .sub_tags .sub_tag_list {
-  width: auto;
+  /* width: auto; */
   display: inline;
   padding-right: 5px;
 }
@@ -611,6 +615,25 @@ form {
   top: 1px;
 }
 
+.gaia .tag,
+.gaia .sub_tags {
+  overflow: hidden;
+  zoom: 1;
+}
+
+.tag_list {
+  width: 220px;
+}
+
+.gaia .tag .tag_list,
+.gaia .tag .sub_tag_list,
+.gaia .sub_tags .tag_list,
+.gaia .sub_tags .sub_tag_list {
+  width: auto;
+  display: inline;
+  padding-right: 5px;
+}
+
 .gaia.gaia_lite .tag label {
   margin: 0;
   margin-right: 12px;
@@ -619,4 +642,15 @@ form {
   vertical-align: inherit;
   font-size: 13px;
   border-radius: 0;
+}
+
+.gaia.gaia_lite .fliter_wp .more_link {
+  font-size: 13px;
+  float: right;
+  position: relative;
+  top: 2px;
+}
+
+.gaia h2 a {
+  font-size: 17px;
 }
