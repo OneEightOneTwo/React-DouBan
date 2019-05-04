@@ -28,6 +28,14 @@ class Header extends Component {
             </div>
         )
     }
+    // shouldComponentUpdate(nextProps,nextState){
+    //     if(nextProps.content !== this.props.content){
+    //         return true;
+    //     }else{
+    //          return false;
+    //     }
+    //   }
+      
 }
 
 export default Header

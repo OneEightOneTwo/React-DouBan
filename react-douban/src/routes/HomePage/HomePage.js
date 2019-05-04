@@ -7,8 +7,9 @@ import PicturesWall from '../../components/Upload/Upload';
 // 上传单张照片
 // import Avatar from '../../components/Upload_one/Upload_one';
 import Logo from '../../assets/logo.png';
-import { Icon } from 'antd';
-import { Input } from 'antd';
+import { Icon, Input} from 'antd';
+// import emitter from '../../util/events';
+import store from '../../store'
 import styles from './HomePage.css';
 const { TextArea } = Input;
 
@@ -16,11 +17,17 @@ const { TextArea } = Input;
 class HomePage extends Component{
   constructor(props){
     super(props);
+    console.log(store.getState());
+    
       this.state = {
       inputValue:'',
       list:[],
+      fileList:[],
+      // fileListImg:[],
+      result:[],
       display:'none',
       num:0,
+      selfName:"土豆",
       contentList:[
         {
           headerImg:require('../../assets/timg.jpg'),
@@ -46,7 +53,6 @@ class HomePage extends Component{
           fromUrl:""
         }
       ],
-      name:'土豆',
 
       // myDate :  new Date()
 
@@ -55,12 +61,15 @@ class HomePage extends Component{
     this.btnClick = this.btnClick.bind(this)
     this.setStyle = this.setStyle.bind(this)
     this.setStyle2 = this.setStyle2.bind(this)
+    this.getFileList = this.getFileList.bind(this)
     // this.btnDelete = this.btnDelete.bind(this)
   }
   render (){
     return (
       <div>
+        {/* 头部 */}
         <Header />
+        {/* logo栏 */}
         <div id={styles.logo}>
           <div className={styles.logo}>
               <ul className={styles.left}>
@@ -70,17 +79,20 @@ class HomePage extends Component{
                   <a href="">浏览发现</a>
                   <a href="">话题广场</a>
               </ul>
-              <Searchbtn />
-          </div>
+          <Searchbtn />
         </div>
+        </div>
+        {/* 以下部分 */}
         <div id={styles.neirong}>
             <div className={styles.neirong}>
                 <div className={styles.neirong_left}>
+                    {/* 输入区 */}
                     <div className={styles.top}>
                         <span onClick={this.setStyle}><Icon type="message"/>&nbsp;说句话</span>
                         <span onClick={this.setStyle2}><Icon type="picture" />&nbsp;发照片</span>
                         <span><Icon type="link" />&nbsp;推荐网页</span>
                         <span><Icon type="book" />&nbsp;写日记</span>
+                        {/* 初始输入框 */}
                         <div style={{display:(this.state.num === 0? "block":"none")}}>
                             <TextArea rows={1} 
                               placeholder="分享生活点滴..." 
@@ -94,10 +106,10 @@ class HomePage extends Component{
                               type="button" 
                               value="提交"  
                               style={{height:"32px",width:"50px"}}
-                              onClick={this.btnClick}
+                              // onClick={this.btnClick}
                               />
                         </div>
-                        {/* 发评论输入框 */}
+                        {/* 说句话输入框 */}
                         <div className={styles.search_speak} style={{display:(this.state.num === 1? "block":"none")}}>
                             <TextArea rows={5} 
                               placeholder="分享生活点滴..." 
@@ -110,7 +122,7 @@ class HomePage extends Component{
                               <a className={styles.aa}>添加网页推荐工具</a>
                               <input 
                                 className={styles.fabu_btn} 
-                                onClick={this.state.inputValue.length>0?this.btnClick:null}
+                                onClick={this.btnClick}
                                 type="button" 
                                 value="发布"/>
                             </div>
@@ -124,37 +136,23 @@ class HomePage extends Component{
                               // onPressEnter={this.send}
                               style={{width: '100%'}}
                             />
-                              <PicturesWall />
+                              <PicturesWall getFileList={this.getFileList}/>
                             <div className={styles.search_speak_bottom}>
                               <a className={styles.aa}>添加网页推荐工具</a>
                               <input 
                                 className={styles.fabu_btn} 
-                                onClick={this.state.inputValue.length>0?this.btnClick:null}
+                                onClick={this.btnClick}
                                 type="button" 
                                 value="发布"/>
                             </div>
                         </div>
                     </div>
-                    {/* <p>{this.state.list.map((item,index)=>{
-                      return <p key={index}>{item}</p>
-                    })}</p> */}
-                    {/* 发评论部分 */}
-                    <ul > 
-                      {this.state.list.map((item,index)=>{
-                        return <div className={styles.listLi} key={index}>
-                                  {/* <Avatar /> */}
-                                  <img className={styles.li_selfImg} alt="" />
-                                  <span className={styles.li_user} style={{marginLeft:"10px"}}>{this.state.name}说</span>
-                                  <div className={styles.li_speak} style={{paddingLeft:"80px"}}>{item}</div>
-                                  <div className={styles.li_bottom} style={{marginLeft:"10px"}}>
-                                    <a className={styles.li_time}>{(new Date()).toLocaleString()}</a>
-                                    <a>回应</a>
-                                    <a>转发</a>
-                                    <a onClick={this.btnDelete.bind(this,index)}>删除</a>
-                                  </div>
-                              </div>
-                      })}
-                    </ul>
+
+                    {/* 评论渲染 */}
+                    {this.state.fileList.length>0 ?  this.wordRender():null}
+                     {/* 输入框有值 或 数据库有值，无照片时 => 只渲染文字 */}
+                    {/* {(this.state.inputValue.length>0 || this.state.list.length>0)  && this.state.fileList.length===0 ? this.wordRender():null } */}
+
                     {/* 热门精选文章 */}
                     <ul id="contentList">
                       {this.state.contentList.map((item,index)=>{
@@ -184,16 +182,21 @@ class HomePage extends Component{
     )
     
   }
-  // componentDidMount()
-  // {
-  //     this.timerID = setInterval(
-  //         () => {
-  //           this.state.myDate = new Date()
-  //         },
-  //         1000
-  //     );
-  // }
-
+  componentDidMount(){
+  }
+  componentWillUpdata(){
+    // this.setState(()=>({
+    //   fileList:this.getFileList()
+    // }))
+  }
+  componentDidUpdate(){
+    // console.log(this.state.inputValue)
+    console.log(this.state.fileList)
+    // this.setState(()=>({
+    //   fileList:[]
+    // }))
+ 
+  }
   // componentWillUnmount(){
   //     clearInterval(this.timerID)
   // }
@@ -217,6 +220,7 @@ class HomePage extends Component{
      
     })
   }
+  // 点击发照片标签
   setStyle2(){
     this.setState(()=>{
       if(this.state.num === 2){
@@ -241,26 +245,89 @@ class HomePage extends Component{
   }
 
   // 点击提交，输入框的值添加到数组
+  // 先判断第三方预存处是否有值，有值才设置进state里，避免空值干扰后期的判断
   btnClick(){
     this.setState((prevState)=>({
-        list:[...prevState.list,prevState.inputValue],
-        // list:this.state.list.push(this.state.inputValue),
-        inputValue:''
-    }))
+      fileList:[...prevState.fileList,[prevState.inputValue,prevState.result]],
+      // list:[...prevState.list,prevState.inputValue],
+      inputValue:'',
+      result:[]
+   }),() => {
+    // this.wordRender();
+    //  console.log(this.state.fileList)
+   })
+   
   }
+  // 设置一个函数，传给子组件带回去用，从而执行函数在父组件的功能
+  
+  getFileList(res){
+        this.setState(()=>({
+        result:res
+      }))
+    }
+    
 
   // 删除数据
   btnDelete(index){
     // console.log(index)
     if(window.confirm('你确定要删除内容吗？')){
-      const list = this.state.list
-      list.splice(index,1)
+      const fileList = this.state.fileList
+      fileList.splice(index,1)
       this.setState(()=>({
-        list:list
+        fileList:fileList
     }))
     }
   }
+
+  // 渲染
+  wordRender(){
+    return <ul> 
+        {this.state.fileList.map((item,index)=>{
+          return <div className={styles.listLi} key={item}>
+                    <img className={styles.li_selfImg} alt="" src={require('../../assets/yao-1.jpg')}/>
+                    <span className={styles.li_user} style={{marginLeft:"10px"}}>{this.state.selfName}说:</span>
+                    {/* 文字渲染 */}
+                    <div className={styles.li_speak} style={{paddingLeft:"80px"}}>{item[0]}</div>
+                    {/* 图片渲染 */}
+                    <div className={styles.listLiImg} >  
+                      {item[1].map((it,idx)=>{
+                              return  <img className={styles.li_listImg} key={idx} alt="" src={require(`../../assets/`+it.name)}/>
+                        })}
+                    </div>
+                    <div className={styles.li_bottom} style={{marginLeft:"10px"}}>
+                      <a className={styles.li_time}>{(new Date()).toLocaleString()}</a>
+                      <a>回应</a>
+                      <a>转发</a>
+                      <a onClick={this.btnDelete.bind(this,index)}>删除</a>
+                    </div>
+                </div>
+      })}
+        </ul>
+  }
   
+  // 仅图片渲染
+  // imgRender(){
+  //   return <ul> 
+  //     {this.state.fileList.map((item,index)=>{
+  //       return <div  key={index}>
+  //         <img className={styles.li_selfImg} alt="" src={require('../../assets/yao.jpg')}/>
+  //         <span className={styles.li_user} style={{marginLeft:"10px"}}>{this.state.selfName}说</span>
+  //         <div className={styles.listLiImg} >  
+              
+  //           {item[index=0,index++].map((it,idx)=>{
+  //                   return  <img className={styles.li_listImg} key={idx} alt="" src={require(`../../assets/`+it.name)}/>
+  //             })}
+  //         </div>
+  //         <div className={styles.li_bottom} style={{marginLeft:"10px"}}>
+  //           <a className={styles.li_time}>{(new Date()).toLocaleString()}</a>
+  //           <a>回应</a>
+  //           <a>转发</a>
+  //           <a onClick={this.btnDelete.bind(this)}>删除</a>
+  //         </div>
+  //       </div>
+  //     })}
+  //   </ul>
+  // }
 }
 
 HomePage.propTypes = {

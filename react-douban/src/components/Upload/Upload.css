@@ -51,9 +51,10 @@
   display: table;
   width: 90px;
   height: 52px;
-  margin-top:22px;
+  /* margin-top:22px;
   margin-right: 8px;
-  margin-bottom: 5px;
+  margin-bottom: 5px; */
+  margin:22px auto;
   text-align: center;
   vertical-align: top;
   background-color: #fafafa;

@@ -107,8 +107,8 @@
     display: table;
     width: 48px;
     height: 48px;
-    margin-right: 8px;
-    margin-bottom: 5px;
+    margin-right: 20px;
+    margin-bottom: 128px;
     text-align: center;
     vertical-align: top;
     background-color: #fafafa;
@@ -120,11 +120,13 @@
     float:left;
 }
 .li_user{
+    display: block;
     height: 22px;
     line-height: 22px;
     color:#ccc;
     font-size: 14px;
-    margin-left:20px;
+    margin-left:30px;
+    margin-bottom: 15px;
 }
 .li_speak{
     line-height: 22px;
@@ -132,11 +134,13 @@
     font-size: 12px;
     word-break:break-all;
     margin:10px 0 13px 0;
+    padding-left:70px;
 }
 .li_bottom{
     height: 22px;
     padding-left:60px;
     margin-bottom: 20px;
+    margin-top:20px;
 }
 .li_time{
     color:#ccc;
@@ -149,6 +153,19 @@
     font-size: 10px;
     margin-right:10px;
 }
+.listLiImg{
+    display: inline-block;
+    width: 370px;
+}
+.li_listImg{
+    display: inline-block;
+    width: 100px;
+    height:100px;
+    margin-right:5px;
+    margin-bottom: 5px;
+    border:1px solid rgb(223, 221, 221);
+}
+
 /* 热门精选栏样式 */
 .content_bg{
     background-color: #f9f9f9;
@@ -180,7 +197,7 @@
     display: inline-block;
     width: 48px;
     height: 48px;
-    margin-right:5px;
+    margin-right:20px;
     margin-bottom: 5px;
     float:left;
 }
