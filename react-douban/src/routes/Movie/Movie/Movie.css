@@ -62,6 +62,30 @@ form {
   border: 0px;
 }
 
+img {
+  max-width: 100%;
+}
+
+a img {
+  border-width: 0;
+  vertical-align: middle;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+i,
+strong,
+th,
+var,
+optgroup {
+  font-style: normal;
+  font-weight: normal;
+}
+
 .gaia .tags label input,
 .gaia .tags .custom_btn input,
 .gaia .sub_tags label input,
@@ -250,6 +274,13 @@ form {
   min-height: 420px;
 }
 
+.contents h2 {
+  color: #111;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eaeaea;
+  margin-bottom: 18px;
+}
+
 .grid_16_8 .article {
   width: 675px;
 }
@@ -287,13 +318,6 @@ form {
   float: right;
   line-height: 30px;
   color: #666;
-}
-
-.contents h2 {
-  color: #111;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eaeaea;
-  margin-bottom: 18px;
 }
 
 #screening h2 span {
@@ -423,6 +447,10 @@ form {
   overflow: hidden;
 }
 
+.allstar10 {
+  background-position: 0 -88px;
+}
+
 .allstar25 {
   background-position: 0 -55px;
 }
@@ -485,6 +513,10 @@ form {
   zoom: 1;
 }
 
+.gaia h2 {
+  font-size: 17px;
+}
+
 .gaia h2 .activate {
   color: #111;
   cursor: default;
@@ -505,7 +537,7 @@ form {
 .gaia .tag .sub_tag_list,
 .gaia .sub_tags .tag_list,
 .gaia .sub_tags .sub_tag_list {
-  width: auto;
+  /* width: auto; */
   display: inline;
   padding-right: 5px;
 }
@@ -611,6 +643,25 @@ form {
   top: 1px;
 }
 
+.gaia .tag,
+.gaia .sub_tags {
+  overflow: hidden;
+  zoom: 1;
+}
+
+.tag_list {
+  width: 220px;
+}
+
+.gaia .tag .tag_list,
+.gaia .tag .sub_tag_list,
+.gaia .sub_tags .tag_list,
+.gaia .sub_tags .sub_tag_list {
+  width: auto;
+  display: inline;
+  padding-right: 5px;
+}
+
 .gaia.gaia_lite .tag label {
   margin: 0;
   margin-right: 12px;
@@ -619,4 +670,223 @@ form {
   vertical-align: inherit;
   font-size: 13px;
   border-radius: 0;
+}
+
+.gaia.gaia_lite .fliter_wp .more_link {
+  font-size: 13px;
+  float: right;
+  position: relative;
+  top: 2px;
+}
+
+.gaia h2 a {
+  font-size: 17px;
+}
+
+/* 飞驰人生 */
+.gaia .list_wp {
+  width: 675px;
+  overflow: hidden;
+  margin-right: -10px;
+}
+
+.gaia .slider .slide_container {
+  overflow: hidden;
+  position: relative;
+}
+
+.gaia .slider .slide_container .slide_wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.gaia .slider .slide_container .slide_wrapper .slide_page {
+  float: left;
+}
+
+/* 有效果 */
+.gaia .item {
+  display: block;
+  float: left;
+  color: #37a;
+  font-size: 13px;
+  text-align: center;
+  margin: 0 25px 10px 0;
+  width: 115px;
+}
+
+.gaia .item .cover_wp {
+  background-size: 100%;
+  height: 161px;
+  overflow: hidden;
+}
+
+.gaia .item p {
+  margin: 5px 0 0;
+  height: 44px;
+  overflow: hidden;
+}
+
+.gaia .item strong {
+  color: #e09015;
+}
+
+.gaia .item .new {
+  opacity: 1;
+  position: relative;
+  top: -2px;
+}
+
+.gaia .item .green {
+  color: #58a05a;
+}
+
+.gaia .item span {
+  color: #aaa;
+}
+
+.gaia .slider .slide_ctrl {
+  text-align: center;
+  float: none;
+  text-align: center;
+  margin: 0 0 13px;
+  position: reabsolute;
+  top: -7px;
+}
+
+.gaia .slider .slide_ctrl .btn_prev {
+  margin-right: 10px;
+}
+
+.gaia .slider .slide_ctrl a,
+.gaia .slider .slide_ctrl .dot {
+  display: inline-block;
+  float: none;
+  margin: 0;
+  cursor: pointer;
+}
+
+.gaia .slider .slide_ctrl .dot {
+  width: 6px;
+  height: 6px;
+  background-color: #d8d8d8;
+  border-radius: 50%;
+  position: relative;
+  top: -5px;
+  margin-right: 5px;
+}
+
+.gaia .slider .slide_ctrl .dot.activate {
+  background-color: #6198d7;
+}
+
+.gaia .slider .slide_ctrl .btn_next {
+  margin-left: 5px;
+}
+
+/* 热门推荐 */
+.gallery_frames {
+  margin-bottom: 36px;
+}
+
+.gallery_hd {
+  margin-bottom: 18px;
+}
+
+.gallery_ui_slide_control {
+  float: right;
+  margin: 5px 0 0 15px;
+}
+
+.gallery_ui_slide_control a {
+  display: block;
+  float: left;
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+  cursor: pointer;
+  background: url(../../../assets/slide_swithc_2.png) no-repeat;
+}
+
+.gallery_ui_slide_control .gallery_btn_prev {
+  background-position: 0 0;
+}
+
+.gallery_ui_slide_control .gallery_btn_next {
+  background-position: -18px 0;
+}
+
+.gallery_frame .gallery_detail {
+  background: #f9f9f9;
+  position: relative;
+  width: 277px;
+  height: 168px;
+  padding: 48px 24px 24px 24px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+
+.gallery_frame {
+  width: 675px;
+  height: 240px;
+  white-space: normal;
+}
+
+.gallery_hd h3 {
+  font-size: 18px;
+  color: #111;
+  line-height: 28px;
+  background: transparent;
+}
+
+.gallery_bd p {
+  font-size: 13px;
+  color: #999;
+  line-height: 20px;
+}
+
+/* 最受欢迎的影评 */
+.review {
+  overflow: hidden;
+  zoom: 1;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.review_hd {
+  float: left;
+  width: 68px;
+}
+
+.review_hd img {
+  width: 68px;
+}
+
+.review_bd {
+  padding-left: 83px;
+}
+
+.review_bd h3 {
+  margin: 0;
+  height: auto;
+  background: none;
+}
+
+.review_bd .review_meta {
+  color: #666;
+  padding: 5px 0;
+}
+
+.review_bd .review_meta a {
+  color: #666;
+}
+
+.review_bd .review_content {
+  line-height: 20px;
 }
