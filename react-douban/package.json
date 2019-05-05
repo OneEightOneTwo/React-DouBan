@@ -10,11 +10,13 @@
     "antd": "^3.16.6",
     "dva": "^2.4.1",
     "events": "^3.0.0",
+    "history": "^4.9.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "redux": "^4.0.1"
   },
   "devDependencies": {
+    "axios": "^0.18.0",
     "babel-plugin-dva-hmr": "^0.3.2",
     "eslint": "^4.14.0",
     "eslint-config-umi": "^0.1.1",
@@ -23,6 +25,7 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.1.0",
     "husky": "^0.12.0",
+    "mockjs": "^1.0.1-beta3",
     "redbox-react": "^1.4.3",
     "redux-devtools": "^3.5.0",
     "roadhog": "^2.5.0-beta.4"
