@@ -1,5 +1,6 @@
 /* 首页（豆瓣页） */
 /* 头部导航栏 */
+
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +11,11 @@
   background-color: black;
   height: 28px;
   width: 100%;
+}
+#header .left {
+  height: 28px;
+  float: left;
+  margin: 0;
 }
 .container {
   width: 1200px;

@@ -10,7 +10,7 @@ const app = dva({ history: createHistory() }); //把#号去掉
 // app.use({});
 
 // 3. Model
-// app.model(require('./models/example').default);
+// app.model(require("./models/example").default);
 
 // 4. Router
 app.router(require("./router").default);

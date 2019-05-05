@@ -1,55 +1,55 @@
 import React, { Component } from "react";
 import { connect } from "dva";
 // 引用axios
-import axios from "axios";
+// import axios from "axios";
 
 import Header from "../../../components/Header/Header";
 // 引用mock
-import "../../../mock/mock";
+// import "../../../mock/mock";
 import styles from "./Movie.css";
 
 class Movie extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      id: "",
-      rating: "",
-      genres: "",
-      title: "",
-      casts: "",
-      collect_count: "",
-      original_title: "",
-      subtype: "",
-      directors: "",
-      year: "",
-      images: "",
-      alt: ""
-    };
+    // this.state = {
+    //   " id": "",
+    //   " rating": "",
+    //   " genres": ""
+    //   // title: "",
+    //   // casts: "",
+    //   // collect_count: "",
+    //   // original_title: "",
+    //   // subtype: "",
+    //   // directors: "",
+    //   // year: "",
+    //   // images: "",
+    //   // alt: ""
+    // };
   }
 
   // 组件挂载后再调用一次
-  componentDidMount() {
-    axios
-      .get("/data")
-      .then(function(res) {
-        const result = res.data.theaters[0].subjects;
-        console.log(result);
-        // const hot = result.map(item => {
-        //   return {
-        //     alt: item.alt,
-        //     casts: item.casts,
-        //     collect_count: item.collect_count,
-        //     directors: item.directors,
-        //     img: item.images.small,
-        //     title: item.title
-        //   };
-        // });
-        // console.log(hot);
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-  }
+  // componentDidMount() {
+  //   axios
+  //     .get("/data")
+  //     .then(function(res) {
+  //       const result = res.data.theaters[0].subjects;
+  //       console.log(result);
+  //       // const hot = result.map(item => {
+  //       //   return {
+  //       //     alt: item.alt,
+  //       //     casts: item.casts,
+  //       //     collect_count: item.collect_count,
+  //       //     directors: item.directors,
+  //       //     img: item.images.small,
+  //       //     title: item.title
+  //       //   };
+  //       // });
+  //       // console.log(hot);
+  //     })
+  //     .catch(function(error) {
+  //       console.log(error);
+  //     });
+  // }
 
   render() {
     return (
@@ -425,12 +425,4 @@ class Movie extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  //见名知意，把state转换为props
-  //可以打印state看看数据结构，然后放到data里
-  return {
-    data: state.data
-  };
-};
-
-export default connect(mapStateToProps)(Movie);
+export default connect(Movie);
