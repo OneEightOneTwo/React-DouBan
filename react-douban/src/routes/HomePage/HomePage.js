@@ -312,29 +312,7 @@ class HomePage extends Component{
         </ul>
   }
   
-  // 仅图片渲染
-  // imgRender(){
-  //   return <ul> 
-  //     {this.state.fileList.map((item,index)=>{
-  //       return <div  key={index}>
-  //         <img className={styles.li_selfImg} alt="" src={require('../../assets/yao.jpg')}/>
-  //         <span className={styles.li_user} style={{marginLeft:"10px"}}>{this.state.selfName}说</span>
-  //         <div className={styles.listLiImg} >  
-              
-  //           {item[index=0,index++].map((it,idx)=>{
-  //                   return  <img className={styles.li_listImg} key={idx} alt="" src={require(`../../assets/`+it.name)}/>
-  //             })}
-  //         </div>
-  //         <div className={styles.li_bottom} style={{marginLeft:"10px"}}>
-  //           <a className={styles.li_time}>{(new Date()).toLocaleString()}</a>
-  //           <a>回应</a>
-  //           <a>转发</a>
-  //           <a onClick={this.btnDelete.bind(this)}>删除</a>
-  //         </div>
-  //       </div>
-  //     })}
-  //   </ul>
-  // }
+  
 }
 
 HomePage.propTypes = {
