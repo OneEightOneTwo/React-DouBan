@@ -11,45 +11,35 @@ import styles from "./Movie.css";
 class Movie extends Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   " id": "",
-    //   " rating": "",
-    //   " genres": ""
-    //   // title: "",
-    //   // casts: "",
-    //   // collect_count: "",
-    //   // original_title: "",
-    //   // subtype: "",
-    //   // directors: "",
-    //   // year: "",
-    //   // images: "",
-    //   // alt: ""
-    // };
+    this.state = {
+      msgList: [
+        {
+          imgUrl: require("../../../assets/review_01.jpg"),
+          title: "是枝裕和导演，请转行拍美食吧！",
+          authors: "福桃九分饱",
+          reviews: "《小偷家族》",
+          cont:
+            "我一直觉得，是枝裕和该去拍美食纪录片。在看完他的《小偷家族》之后更加坚定了这样的想法。 比如电影刚开始不久，偷完东西的治带着祥太去买热乎乎的现炸可乐饼，尽管自己都穷得吃不上饭，却依旧把可乐饼递给瑟瑟..."
+        },
+        {
+          imgUrl: require("../../../assets/review_02.jpg"),
+          title: "《一出好戏》戏里戏外，带着黄渤式的幽默，探讨着黄渤的世界观。",
+          authors: "猴头虫",
+          reviews: "《一出好戏》",
+          cont:
+            " 上海影城《一出好戏》的首映礼看完的整体感觉 四个字：真 的 好 看！ 再四个字：值 得 二 刷！ 很多从演员蜕变成导演的多重身份艺人对电影的理解和传统的导演是不一样的，所以这些人的片子特别是处女座都有着极强..."
+        },
+        {
+          imgUrl: require("../../../assets/review_03.jpg"),
+          title: "谎言终究是谎言",
+          authors: "世界尽头",
+          reviews: "《楚门的世界》",
+          cont:
+            " 在楚门的生活中没有基丁这样的启蒙者，他要自发地觉醒并进行自我拯救，这在现实中几乎不可能，所以影片里，体制是不怀好意的，比起跋扈专横的父权，它演变成全民的偷窥行为。在这座无所不包的摄影棚里，导演给了..."
+        }
+      ]
+    };
   }
-
-  // 组件挂载后再调用一次
-  // componentDidMount() {
-  //   axios
-  //     .get("/data")
-  //     .then(function(res) {
-  //       const result = res.data.theaters[0].subjects;
-  //       console.log(result);
-  //       // const hot = result.map(item => {
-  //       //   return {
-  //       //     alt: item.alt,
-  //       //     casts: item.casts,
-  //       //     collect_count: item.collect_count,
-  //       //     directors: item.directors,
-  //       //     img: item.images.small,
-  //       //     title: item.title
-  //       //   };
-  //       // });
-  //       // console.log(hot);
-  //     })
-  //     .catch(function(error) {
-  //       console.log(error);
-  //     });
-  // }
 
   render() {
     return (
@@ -190,7 +180,10 @@ class Movie extends Component {
                         <ul>
                           <li className={styles.poster}>
                             <a href=" ">
-                              <img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2554905337.webp" />
+                              <img
+                                src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2554905337.webp"
+                                alt=""
+                              />
                             </a>
                           </li>
                           <li className={styles.titles}>
@@ -217,7 +210,10 @@ class Movie extends Component {
                         <ul>
                           <li className={styles.poster}>
                             <a href=" ">
-                              <img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2551353482.webp" />
+                              <img
+                                src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2551353482.webp"
+                                alt=""
+                              />
                             </a>
                           </li>
                           <li className={styles.titles}>
@@ -244,7 +240,10 @@ class Movie extends Component {
                         <ul>
                           <li className={styles.poster}>
                             <a href=" ">
-                              <img src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2551995207.webp" />
+                              <img
+                                src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2551995207.webp"
+                                alt=""
+                              />
                             </a>
                           </li>
                           <li className={styles.titles}>
@@ -303,6 +302,7 @@ class Movie extends Component {
                 <div className={styles.movie_home_left_bottom}>
                   <img
                     src="https://img3.doubanio.com/view/dale-online/dale_ad/public/5bbcfd8ded9c330.jpg"
+                    alt=""
                     border="0"
                     width="675"
                     height="112"
@@ -414,8 +414,305 @@ class Movie extends Component {
                       </a>
                     </h2>
                   </div>
+                  <div className={styles.list_up}>
+                    <div className={styles.slide}>
+                      <div
+                        className={styles.slide_container}
+                        style={{ height: 426 }}
+                      >
+                        <div className={styles.slide_wrapper}>
+                          <div
+                            className={styles.slide_page}
+                            style={{ width: 700 }}
+                            data-index="0"
+                          >
+                            {/* 01 */}
+                            <a href="" className={styles.item}>
+                              <div className={styles.cover_wp}>
+                                <img
+                                  src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2542973862.jpg"
+                                  alt="飞驰人生"
+                                />
+                              </div>
+                              <p>
+                                飞驰人生
+                                <strong>6.9</strong>
+                              </p>
+                            </a>
+
+                            {/* 02 */}
+                            <a href="" className={styles.item}>
+                              <div className={styles.cover_wp}>
+                                <img
+                                  src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2549537782.jpg"
+                                  alt="过春天"
+                                />
+                              </div>
+                              <p>
+                                过春天
+                                <strong>7.8</strong>
+                              </p>
+                            </a>
+
+                            {/* 03 */}
+                            <a href="" className={styles.item}>
+                              <div className={styles.cover_wp}>
+                                <img
+                                  src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2548053134.jpg"
+                                  alt="教授与疯子"
+                                />
+                              </div>
+                              <p>
+                                <span className={styles.green}>
+                                  <img
+                                    src="https://img3.doubanio.com/f/movie/caa8f80abecee1fc6f9d31924cef8dd9a24c7227/pics/movie/ic_new.png"
+                                    alt="新"
+                                    width="16"
+                                    className={styles.new}
+                                  />
+                                </span>
+                                教授与疯子
+                                <strong>7.7</strong>
+                              </p>
+                            </a>
+
+                            {/* 04 */}
+                            <a href="" className={styles.item}>
+                              <div className={styles.cover_wp}>
+                                <img
+                                  src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2531644863.jpg"
+                                  alt="彼布利亚古书堂事件手帖"
+                                />
+                              </div>
+                              <p>
+                                <span className={styles.green}>
+                                  <img
+                                    src="https://img3.doubanio.com/f/movie/caa8f80abecee1fc6f9d31924cef8dd9a24c7227/pics/movie/ic_new.png"
+                                    alt="新"
+                                    width="16"
+                                    className={styles.new}
+                                  />
+                                </span>
+                                彼布利亚古书堂事件手帖
+                                <strong>6.4</strong>
+                              </p>
+                            </a>
+
+                            {/* 05 */}
+                            <a href="" className={styles.item}>
+                              <div className={styles.cover_wp}>
+                                <img
+                                  src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2532743911.jpg"
+                                  alt="日暮"
+                                />
+                              </div>
+                              <p>
+                                <span className={styles.green}>
+                                  <img
+                                    src="https://img3.doubanio.com/f/movie/caa8f80abecee1fc6f9d31924cef8dd9a24c7227/pics/movie/ic_new.png"
+                                    alt="新"
+                                    width="16"
+                                    className={styles.new}
+                                  />
+                                </span>
+                                日暮
+                                <strong>6.2</strong>
+                              </p>
+                            </a>
+
+                            {/* 06 */}
+                            <a href="" className={styles.item}>
+                              <div className={styles.cover_wp}>
+                                <img
+                                  src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2552522615.jpg"
+                                  alt="风中有朵雨做的云"
+                                />
+                              </div>
+                              <p>
+                                风中有朵雨做的云
+                                <strong>7.4</strong>
+                              </p>
+                            </a>
+
+                            {/* 07 */}
+                            <a href="" className={styles.item}>
+                              <div className={styles.cover_wp}>
+                                <img
+                                  src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2549177902.jpg"
+                                  alt="绿皮书"
+                                />
+                              </div>
+                              <p>
+                                绿皮书
+                                <strong>8.9</strong>
+                              </p>
+                            </a>
+
+                            {/* 08 */}
+                            <a href="" className={styles.item}>
+                              <div className={styles.cover_wp}>
+                                <img
+                                  src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2546828235.jpg"
+                                  alt="阳台上"
+                                />
+                              </div>
+                              <p>
+                                阳台上
+                                <strong>5.7</strong>
+                              </p>
+                            </a>
+
+                            {/* 09 */}
+                            <a href="" className={styles.item}>
+                              <div className={styles.cover_wp}>
+                                <img
+                                  src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2545472803.jpg"
+                                  alt="流浪地球"
+                                />
+                              </div>
+                              <p>
+                                流浪地球
+                                <strong>7.9</strong>
+                              </p>
+                            </a>
+
+                            {/* 10 */}
+                            <a href="" className={styles.item}>
+                              <div className={styles.cover_wp}>
+                                <img
+                                  src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2530599636.jpg"
+                                  alt="小偷家族"
+                                />
+                              </div>
+                              <p>
+                                小偷家族
+                                <strong>8.7</strong>
+                              </p>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className={
+                          styles.slide_ctrl + " " + styles.ui_slide_control
+                        }
+                        style={{
+                          float: "none",
+                          textAlign: "center",
+                          margin: " 0 0 13",
+                          transform: "translateX(276px)"
+                        }}
+                      >
+                        <a className={styles.btn_prev} href="javascript:;" />
+                        <a className={styles.btn_next} href="javascript:;" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 {/* 最近热门电影end */}
+
+                {/* 热门推荐begin */}
+                <div className={styles.gallery_frames}>
+                  <div className={styles.gallery_hd}>
+                    <div className={styles.gallery_ui_slide_control}>
+                      <span className={styles.prev_btn}>
+                        <a
+                          className={styles.gallery_btn_prev}
+                          href="javascript:void(0)"
+                        />
+                      </span>
+
+                      <span className={styles.next_btn}>
+                        <a
+                          className={styles.gallery_btn_next}
+                          href="javascript:void(0)"
+                        />
+                      </span>
+                    </div>
+                    <div className={styles.slide_tip}>
+                      <span className={styles.gallery_ui_slide_index}>1</span>/
+                      <span className={styles.gallery_ui_slide_max}>5</span>
+                    </div>
+                    <h2>热门推荐</h2>
+                  </div>
+                  <div className={styles.hot_gallery}>
+                    <ul className={styles.ui_slide_content}>
+                      <li className={styles.ui_slide_item}>
+                        <div className={styles.gallery_frame}>
+                          <a href="">
+                            <img
+                              src="https://img1.doubanio.com/view/movie_gallery_frame_hot_rec/normal/public/68983670420431b.jpg"
+                              alt="太刺激！HBO新剧新片混剪预告"
+                              width="350"
+                              height="240"
+                            />
+                          </a>
+                          <div className={styles.gallery_detail}>
+                            <div className={styles.gallery_hd}>
+                              <a href="">
+                                <h3>太刺激！HBO新剧新片混剪预告</h3>
+                              </a>
+                            </div>
+                            <div className={styles.gallery_bd}>
+                              <p>
+                                《大小谎言第二季》《黑暗物质三部曲》《守望者》…美剧迷过年了！
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                {/* 热门推荐end */}
+
+                {/* 最受欢迎的影评begin */}
+                <div id={styles.reviews} className={styles.s}>
+                  <div className={styles.reviews_hd}>
+                    <h2>
+                      最受欢迎的影评
+                      <span>
+                        <a href="">更多热门影评»</a>
+                      </span>
+                      <span>
+                        <a href="">新片影评»</a>
+                      </span>
+                    </h2>
+                  </div>
+                  <div className={styles.reviews_bd}>
+                    {this.state.msgList.map((item, index) => {
+                      return (
+                        <div className={styles.review}>
+                          <div className={styles.review_hd}>
+                            <a href="">
+                              <img
+                                className={styles.lazy}
+                                src={item.imgUrl}
+                                alt={item.reviews}
+                              />
+                            </a>
+                          </div>
+                          <div className={styles.review_bd}>
+                            <h3>
+                              <a href="">{item.title}</a>
+                            </h3>
+                            <div className={styles.review_meta}>
+                              <a href="">{item.authors}</a>
+                              评论
+                              <a href="">{item.reviews}</a>
+                              <span className={styles.allstar50} />
+                            </div>
+                            <div className={styles.review_content}>
+                              {item.cont}
+                              <a href="">(全文)</a>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+                {/* 最受欢迎的影评end */}
               </div>
             </div>
           </div>
@@ -425,4 +722,4 @@ class Movie extends Component {
   }
 }
 
-export default connect(Movie);
+export default connect()(Movie);
