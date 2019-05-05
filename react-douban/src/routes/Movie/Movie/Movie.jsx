@@ -37,6 +37,107 @@ class Movie extends Component {
           cont:
             " 在楚门的生活中没有基丁这样的启蒙者，他要自发地觉醒并进行自我拯救，这在现实中几乎不可能，所以影片里，体制是不怀好意的，比起跋扈专横的父权，它演变成全民的偷窥行为。在这座无所不包的摄影棚里，导演给了..."
         }
+      ],
+      HotList: [
+        {
+          imgUrl: require("../../../assets/hoting_01.jpg"),
+          title: "复仇者联盟4...",
+          rating_star: "allstar45",
+          subject_rate: 8.7
+        },
+        {
+          imgUrl: require("../../../assets/hoting_02.jpg"),
+          title: "何以为家",
+          rating_star: "allstar45",
+          subject_rate: 8.9
+        },
+        {
+          imgUrl: require("../../../assets/hoting_03.jpg"),
+          title: "下一任：前任...",
+          rating_star: "allstar15",
+          subject_rate: 2.6
+        },
+        {
+          imgUrl: require("../../../assets/hoting_04.jpg"),
+          title: "反贪风暴4",
+          rating_star: "allstar35",
+          subject_rate: 6.3
+        },
+        {
+          imgUrl: require("../../../assets/hoting_05.jpg"),
+          title: "调音师",
+          rating_star: "allstar45",
+          subject_rate: 8.3
+        }
+      ],
+      MovieList: [
+        {
+          imgUrl: require("../../../assets/movie_01.jpg"),
+          title: "绿皮书",
+          rating: 8.9,
+          new: ""
+        },
+        {
+          imgUrl: require("../../../assets/movie_02.jpg"),
+          title: "飞驰人生",
+          rating: 6.9,
+          new: ""
+        },
+        {
+          imgUrl: require("../../../assets/movie_03.jpg"),
+          title: "为家而战",
+          rating: 6.9,
+          new: require("../../../assets/ic_new.png")
+        },
+        {
+          imgUrl: require("../../../assets/movie_04.jpg"),
+          title: "教授与疯子",
+          rating: 7.7,
+          new: require("../../../assets/ic_new.png")
+        },
+        {
+          imgUrl: require("../../../assets/movie_05.jpg"),
+          title: "风中有朵雨做的云",
+          rating: 7.4,
+          new: ""
+        },
+        {
+          imgUrl: require("../../../assets/movie_06.jpg"),
+          title: "过春天",
+          rating: 7.8,
+          new: ""
+        },
+        {
+          imgUrl: require("../../../assets/movie_07.jpg"),
+          title: "流浪地球",
+          rating: 7.9,
+          new: ""
+        },
+        {
+          imgUrl: require("../../../assets/movie_08.jpg"),
+          title: "阳台上",
+          rating: 5.7,
+          new: ""
+        },
+        {
+          imgUrl: require("../../../assets/movie_09.jpg"),
+          title: "小偷家族",
+          rating: 8.7,
+          new: ""
+        },
+        {
+          imgUrl: require("../../../assets/movie_10.jpg"),
+          title: "蚁人2：黄蜂女现身",
+          rating: 7.3,
+          new: ""
+        }
+      ],
+      RecommendList: [
+        {
+          img: require("../../../assets/recommend_01.jpg"),
+          h3_sub: "《X战警：黑凤凰》定档6月6提前北美上映",
+          p_sup: " 法鲨一美全员回归！琴·葛蕾黑化，凤凰之力爆发！"
+        }
       ]
     };
   }
@@ -141,159 +242,44 @@ class Movie extends Component {
                     </h2>
                   </div>
                   <div className={styles.screening_hd}>
-                    <ul
-                      className={styles.ui_slide_content}
-                      style={{ left: -700 }}
-                    >
+                    <ul className={styles.ui_slide_content}>
                       {/* 1 */}
-                      <li className={styles.ui_slide_item + " " + styles.s}>
-                        <ul>
-                          <li className={styles.poster}>
-                            <a href=" ">
-                              <img
-                                src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2552058346.webp"
-                                alt=""
-                              />
-                            </a>
+                      {this.state.HotList.map((item, index) => {
+                        return (
+                          <li
+                            className={styles.ui_slide_item + " " + styles.s}
+                            key={index}
+                          >
+                            <ul>
+                              <li className={styles.poster}>
+                                <a href=" ">
+                                  <img src={item.imgUrl} alt="" />
+                                </a>
+                              </li>
+                              <li className={styles.titles}>
+                                <a href="">{item.title}</a>
+                              </li>
+                              <li className={styles.rating}>
+                                <span
+                                  className={
+                                    styles.rating_star +
+                                    " " +
+                                    styles[item.rating_star]
+                                  }
+                                />
+                                <span className={styles.subject_rate}>
+                                  {item.subject_rate}
+                                </span>
+                              </li>
+                              <li className={styles.ticket_btn}>
+                                <span>
+                                  <a href="">选座购票</a>
+                                </span>
+                              </li>
+                            </ul>
                           </li>
-                          <li className={styles.titles}>
-                            <a href="">复仇者联盟4...</a>
-                          </li>
-                          <li className={styles.rating}>
-                            <span
-                              className={
-                                styles.rating_star + " " + styles.allstar45
-                              }
-                            />
-                            <span className={styles.subject_rate}>8.8</span>
-                          </li>
-                          <li className={styles.ticket_btn}>
-                            <span>
-                              <a href="">选座购票</a>
-                            </span>
-                          </li>
-                        </ul>
-                      </li>
-
-                      {/* 2 */}
-                      <li className={styles.ui_slide_item + " " + styles.s}>
-                        <ul>
-                          <li className={styles.poster}>
-                            <a href=" ">
-                              <img
-                                src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2554905337.webp"
-                                alt=""
-                              />
-                            </a>
-                          </li>
-                          <li className={styles.titles}>
-                            <a href="">何以为家</a>
-                          </li>
-                          <li className={styles.rating}>
-                            <span
-                              className={
-                                styles.rating_star + " " + styles.allstar45
-                              }
-                            />
-                            <span className={styles.subject_rate}>8.8</span>
-                          </li>
-                          <li className={styles.ticket_btn}>
-                            <span>
-                              <a href="">选座购票</a>
-                            </span>
-                          </li>
-                        </ul>
-                      </li>
-
-                      {/* 3 */}
-                      <li className={styles.ui_slide_item + " " + styles.s}>
-                        <ul>
-                          <li className={styles.poster}>
-                            <a href=" ">
-                              <img
-                                src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2551353482.webp"
-                                alt=""
-                              />
-                            </a>
-                          </li>
-                          <li className={styles.titles}>
-                            <a href="">反贪风暴4</a>
-                          </li>
-                          <li className={styles.rating}>
-                            <span
-                              className={
-                                styles.rating_star + " " + styles.allstar35
-                              }
-                            />
-                            <span className={styles.subject_rate}>6.3</span>
-                          </li>
-                          <li className={styles.ticket_btn}>
-                            <span>
-                              <a href="">选座购票</a>
-                            </span>
-                          </li>
-                        </ul>
-                      </li>
-
-                      {/* 4 */}
-                      <li className={styles.ui_slide_item + " " + styles.s}>
-                        <ul>
-                          <li className={styles.poster}>
-                            <a href=" ">
-                              <img
-                                src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2551995207.webp"
-                                alt=""
-                              />
-                            </a>
-                          </li>
-                          <li className={styles.titles}>
-                            <a href="">调音师</a>
-                          </li>
-                          <li className={styles.rating}>
-                            <span
-                              className={
-                                styles.rating_star + " " + styles.allstar45
-                              }
-                            />
-                            <span className={styles.subject_rate}>8.3</span>
-                          </li>
-                          <li className={styles.ticket_btn}>
-                            <span>
-                              <a href="">选座购票</a>
-                            </span>
-                          </li>
-                        </ul>
-                      </li>
-
-                      {/* 5 */}
-                      <li className={styles.ui_slide_item + " " + styles.s}>
-                        <ul>
-                          <li className={styles.poster}>
-                            <a href=" ">
-                              <img
-                                src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2554775210.webp"
-                                alt="撞死了一只羊"
-                              />
-                            </a>
-                          </li>
-                          <li className={styles.titles}>
-                            <a href="">撞死了一只羊...</a>
-                          </li>
-                          <li className={styles.rating}>
-                            <span
-                              className={
-                                styles.rating_star + " " + styles.allstar25
-                              }
-                            />
-                            <span className={styles.subject_rate}>4.9</span>
-                          </li>
-                          <li className={styles.ticket_btn}>
-                            <span>
-                              <a href="">选座购票</a>
-                            </span>
-                          </li>
-                        </ul>
-                      </li>
+                        );
+                      })}
                     </ul>
                   </div>
                 </div>
@@ -407,7 +393,7 @@ class Movie extends Component {
                         style={{
                           fontSize: 13,
                           display: "block",
-                          transform: " translate(640px,-57px)"
+                          transform: " translate(620px,-57px)"
                         }}
                       >
                         更多»
@@ -426,169 +412,27 @@ class Movie extends Component {
                             style={{ width: 700 }}
                             data-index="0"
                           >
-                            {/* 01 */}
-                            <a href="" className={styles.item}>
-                              <div className={styles.cover_wp}>
-                                <img
-                                  src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2542973862.jpg"
-                                  alt="飞驰人生"
-                                />
-                              </div>
-                              <p>
-                                飞驰人生
-                                <strong>6.9</strong>
-                              </p>
-                            </a>
-
-                            {/* 02 */}
-                            <a href="" className={styles.item}>
-                              <div className={styles.cover_wp}>
-                                <img
-                                  src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2549537782.jpg"
-                                  alt="过春天"
-                                />
-                              </div>
-                              <p>
-                                过春天
-                                <strong>7.8</strong>
-                              </p>
-                            </a>
-
-                            {/* 03 */}
-                            <a href="" className={styles.item}>
-                              <div className={styles.cover_wp}>
-                                <img
-                                  src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2548053134.jpg"
-                                  alt="教授与疯子"
-                                />
-                              </div>
-                              <p>
-                                <span className={styles.green}>
-                                  <img
-                                    src="https://img3.doubanio.com/f/movie/caa8f80abecee1fc6f9d31924cef8dd9a24c7227/pics/movie/ic_new.png"
-                                    alt="新"
-                                    width="16"
-                                    className={styles.new}
-                                  />
-                                </span>
-                                教授与疯子
-                                <strong>7.7</strong>
-                              </p>
-                            </a>
-
-                            {/* 04 */}
-                            <a href="" className={styles.item}>
-                              <div className={styles.cover_wp}>
-                                <img
-                                  src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2531644863.jpg"
-                                  alt="彼布利亚古书堂事件手帖"
-                                />
-                              </div>
-                              <p>
-                                <span className={styles.green}>
-                                  <img
-                                    src="https://img3.doubanio.com/f/movie/caa8f80abecee1fc6f9d31924cef8dd9a24c7227/pics/movie/ic_new.png"
-                                    alt="新"
-                                    width="16"
-                                    className={styles.new}
-                                  />
-                                </span>
-                                彼布利亚古书堂事件手帖
-                                <strong>6.4</strong>
-                              </p>
-                            </a>
-
-                            {/* 05 */}
-                            <a href="" className={styles.item}>
-                              <div className={styles.cover_wp}>
-                                <img
-                                  src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2532743911.jpg"
-                                  alt="日暮"
-                                />
-                              </div>
-                              <p>
-                                <span className={styles.green}>
-                                  <img
-                                    src="https://img3.doubanio.com/f/movie/caa8f80abecee1fc6f9d31924cef8dd9a24c7227/pics/movie/ic_new.png"
-                                    alt="新"
-                                    width="16"
-                                    className={styles.new}
-                                  />
-                                </span>
-                                日暮
-                                <strong>6.2</strong>
-                              </p>
-                            </a>
-
-                            {/* 06 */}
-                            <a href="" className={styles.item}>
-                              <div className={styles.cover_wp}>
-                                <img
-                                  src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2552522615.jpg"
-                                  alt="风中有朵雨做的云"
-                                />
-                              </div>
-                              <p>
-                                风中有朵雨做的云
-                                <strong>7.4</strong>
-                              </p>
-                            </a>
-
-                            {/* 07 */}
-                            <a href="" className={styles.item}>
-                              <div className={styles.cover_wp}>
-                                <img
-                                  src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2549177902.jpg"
-                                  alt="绿皮书"
-                                />
-                              </div>
-                              <p>
-                                绿皮书
-                                <strong>8.9</strong>
-                              </p>
-                            </a>
-
-                            {/* 08 */}
-                            <a href="" className={styles.item}>
-                              <div className={styles.cover_wp}>
-                                <img
-                                  src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2546828235.jpg"
-                                  alt="阳台上"
-                                />
-                              </div>
-                              <p>
-                                阳台上
-                                <strong>5.7</strong>
-                              </p>
-                            </a>
-
-                            {/* 09 */}
-                            <a href="" className={styles.item}>
-                              <div className={styles.cover_wp}>
-                                <img
-                                  src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2545472803.jpg"
-                                  alt="流浪地球"
-                                />
-                              </div>
-                              <p>
-                                流浪地球
-                                <strong>7.9</strong>
-                              </p>
-                            </a>
-
-                            {/* 10 */}
-                            <a href="" className={styles.item}>
-                              <div className={styles.cover_wp}>
-                                <img
-                                  src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2530599636.jpg"
-                                  alt="小偷家族"
-                                />
-                              </div>
-                              <p>
-                                小偷家族
-                                <strong>8.7</strong>
-                              </p>
-                            </a>
+                            {this.state.MovieList.map((item, index) => {
+                              return (
+                                <a href="" className={styles.item} key={index}>
+                                  <div className={styles.cover_wp}>
+                                    <img src={item.imgUrl} alt={item.title} />
+                                  </div>
+                                  <p>
+                                    <span className={styles.green}>
+                                      <img
+                                        src={item.new}
+                                        alt=""
+                                        width="16"
+                                        className={styles.new}
+                                      />
+                                    </span>
+                                    {item.title}
+                                    <strong>{item.rating}</strong>
+                                  </p>
+                                </a>
+                              );
+                            })}
                           </div>
                         </div>
                       </div>
@@ -637,30 +481,32 @@ class Movie extends Component {
                   </div>
                   <div className={styles.hot_gallery}>
                     <ul className={styles.ui_slide_content}>
-                      <li className={styles.ui_slide_item}>
-                        <div className={styles.gallery_frame}>
-                          <a href="">
-                            <img
-                              src="https://img1.doubanio.com/view/movie_gallery_frame_hot_rec/normal/public/68983670420431b.jpg"
-                              alt="太刺激！HBO新剧新片混剪预告"
-                              width="350"
-                              height="240"
-                            />
-                          </a>
-                          <div className={styles.gallery_detail}>
-                            <div className={styles.gallery_hd}>
+                      {this.state.RecommendList.map((item, index) => {
+                        return (
+                          <li className={styles.ui_slide_item} key={index}>
+                            <div className={styles.gallery_frame}>
                               <a href="">
-                                <h3>太刺激！HBO新剧新片混剪预告</h3>
+                                <img
+                                  src={item.img}
+                                  alt={item.h3_sub}
+                                  width="350"
+                                  height="240"
+                                />
                               </a>
+                              <div className={styles.gallery_detail}>
+                                <div className={styles.gallery_hd}>
+                                  <a href="">
+                                    <h3>{item.h3_sub}</h3>
+                                  </a>
+                                </div>
+                                <div className={styles.gallery_bd}>
+                                  <p>{item.p_sup}</p>
+                                </div>
+                              </div>
                             </div>
-                            <div className={styles.gallery_bd}>
-                              <p>
-                                《大小谎言第二季》《黑暗物质三部曲》《守望者》…美剧迷过年了！
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                 </div>
@@ -682,7 +528,7 @@ class Movie extends Component {
                   <div className={styles.reviews_bd}>
                     {this.state.msgList.map((item, index) => {
                       return (
-                        <div className={styles.review}>
+                        <div className={styles.review} key={index}>
                           <div className={styles.review_hd}>
                             <a href="">
                               <img

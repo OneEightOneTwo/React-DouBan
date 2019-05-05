@@ -329,7 +329,7 @@ optgroup {
   font-size: 12px;
   text-align: center;
   margin-right: 25px;
-  width: 115px;
+  width: 106px;
   height: 270px;
   overflow: hidden;
 }
@@ -449,6 +449,10 @@ optgroup {
 
 .allstar10 {
   background-position: 0 -88px;
+}
+
+.allstar15 {
+  background-position: 0 -77px;
 }
 
 .allstar25 {
