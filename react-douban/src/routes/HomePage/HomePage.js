@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import { connect } from 'dva';
+// import { connect } from 'dva';
 import Header from '../../components/Header/Header';
 import Searchbtn from '../../components/Search/Searchbtn';
 // 上传多张照片（照片墙）
@@ -17,9 +17,10 @@ const { TextArea } = Input;
 class HomePage extends Component{
   constructor(props){
     super(props);
-    console.log(store.getState());
+    
     
       this.state = {
+      deleteListFile: store.getState().deleteListFile,
       inputValue:'',
       list:[],
       fileList:[],
@@ -191,7 +192,8 @@ class HomePage extends Component{
   }
   componentDidUpdate(){
     // console.log(this.state.inputValue)
-    console.log(this.state.fileList)
+    // console.log(this.state.fileList)
+    console.log(store.getState().deleteListFile);
     // this.setState(()=>({
     //   fileList:[]
     // }))
@@ -247,11 +249,16 @@ class HomePage extends Component{
   // 点击提交，输入框的值添加到数组
   // 先判断第三方预存处是否有值，有值才设置进state里，避免空值干扰后期的判断
   btnClick(){
+   const action={
+    type:"change_deleteListFile_value",
+    deleteListFile:true
+    }
+    store.dispatch(action)
     this.setState((prevState)=>({
       fileList:[...prevState.fileList,[prevState.inputValue,prevState.result]],
       // list:[...prevState.list,prevState.inputValue],
       inputValue:'',
-      result:[]
+      result:[],
    }),() => {
     // this.wordRender();
     //  console.log(this.state.fileList)
@@ -333,4 +340,5 @@ class HomePage extends Component{
 HomePage.propTypes = {
 };
 
-export default connect()(HomePage);
+// export default connect()(HomePage);
+export default HomePage;

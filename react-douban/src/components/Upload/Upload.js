@@ -7,9 +7,11 @@ import './Upload.css'
 class PicturesWall extends Component {
   constructor(props){
     super(props);
-    console.log(store.getState());
-    
+    this.handleStoreChange = this.handleStoreChange.bind(this)
+    store.subscribe(this.handleStoreChange)
+
     this.state = {
+      deleteListFile : store.getState().deleteListFile,
       previewVisible: false,
       previewImage: '',
       fileList: [
@@ -26,9 +28,15 @@ class PicturesWall extends Component {
   // shouldComponentUpdate(){
   //   return false;
   // }
-  
+  handleStoreChange(){
+    this.setState(()=>({
+      fileList:[]
+    }))
+  }
   componentDidUpdate(){
+ 
     // console.log(this.state.fileList+`组件更新完毕`)
+    // console.log(store.getState().deleteListFile);
       
   }
   // componentWillReceiveProps(){
@@ -38,7 +46,9 @@ class PicturesWall extends Component {
   //   console.log('componentWillReceiveProps')
   // }
   componentDidMount(){
+ 
     // console.log(this.state.fileList+`挂载完毕`)
+   
   }
   // 取消监听
   componentWillUnmount() {
